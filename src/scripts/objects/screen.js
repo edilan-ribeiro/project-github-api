@@ -27,11 +27,11 @@ const screen = {
                                           <li>
                                               <a href="${repo.html_url}" target="_blank">${repo.name}
                                                   <ul>
-                                                          <li><p>🍴 ${repo.forks_count} </p></li>
-                                                          <li><p>🌟 ${repo.stargazers_count} </p></li>
-                                                          <li> <p>👀 ${repo.watchers_count} </p></li>
-                                                          <li> <p>🧾 ${language} </p></li>
-                                                      </ul>
+                                                      <li><p>🍴 ${repo.forks_count} </p></li>
+                                                      <li><p>🌟 ${repo.stargazers_count} </p></li>
+                                                      <li><p>👀 ${repo.watchers_count} </p></li>
+                                                      <li><p>🧾 ${language} </p></li>
+                                                  </ul>
                                               </a>
                                           </li>`})
 
@@ -40,12 +40,8 @@ const screen = {
                   const name = repoEvent.repo.name ?? '⚠ Sem nome de repositório disponível'
                   const message = repoEvent.payload.commits?.[0]?.message ?? '⚠ Não há mensagem de commit!'
                   repoEvents += `<li>▶ ${name} - ${message}</li>`
-                  console.log(message)
                 })
                 
-                
-
-               
                 if (user.repositories.length > 0) {
                     this.userProfile.innerHTML += `
                       <div class="repositories section">
@@ -66,8 +62,6 @@ const screen = {
                         </div>`
                     }
                   }
-                  
-               
     },
     renderNotFound(){
         this.userProfile.innerHTML = "<h3>Usuário não encontrado<h3>"
