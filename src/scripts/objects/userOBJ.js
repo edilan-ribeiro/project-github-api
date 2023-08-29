@@ -12,15 +12,11 @@ const user = {
         this.name = gitHubUser.name
         this.bio = gitHubUser.bio
         this.userName = gitHubUser.login
+        this.followers = gitHubUser.followers
+        this.following = gitHubUser.following
     },
     setRepositories(repositories){
         this.repositories = repositories
-    },
-    setFollowers(followersNumber) {
-        this.followers = followersNumber
-    },
-    setFollowing(followedNumber) {
-        this.following = followedNumber
     },
     setEvents(eventList) {
         const createAndPushEvents = eventList.filter( 
@@ -28,7 +24,6 @@ const user = {
         )
         this.events = createAndPushEvents.slice(0, 10)
     }
-    
 }
 
 
