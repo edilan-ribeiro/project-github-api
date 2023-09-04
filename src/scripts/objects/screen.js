@@ -18,19 +18,14 @@ const screen = {
 
             let repositoriesItems = ''
             user.repositories.forEach(repo => {
-                let language = repo.language
-
-                if (language === null) {
-                    language = 'API não retornou uma linguagem!'
-                }
                     repositoriesItems += `
                                           <li>
                                               <a href="${repo.html_url}" target="_blank">${repo.name}
                                                   <ul>
-                                                      <li><p>🍴 ${repo.forks_count} </p></li>
-                                                      <li><p>🌟 ${repo.stargazers_count} </p></li>
-                                                      <li><p>👀 ${repo.watchers_count} </p></li>
-                                                      <li><p>🧾 ${language} </p></li>
+                                                      <li><p>🍴 ${repo.forks_count ?? 'API não retornou forks!'} </p></li>
+                                                      <li><p>🌟 ${repo.stargazers_count ?? 'API não retornou estrelas!'} </p></li>
+                                                      <li><p>👀 ${repo.watchers_count ?? 'API não retornou observadores!'} </p></li>
+                                                      <li><p>🧾 ${repo.language ?? 'API não retornou uma linguagem!'}</p></li>
                                                   </ul>
                                               </a>
                                           </li>`})
