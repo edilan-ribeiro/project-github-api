@@ -80,7 +80,7 @@ main {
 }
 
 .container header #btn-search:hover {
-  background-color: hotpink;
+  background-color: rgb(119, 60, 119);
   color: #ffffff;
   border-color: #ffffff;
 }
@@ -106,7 +106,7 @@ main {
 .container .profile-data .info img{
   width: 50%;
   border-radius: 50%;
-  border: 10px solid hotpink;
+  border: 10px solid rgb(119, 60, 119);
 }
 
 .container .profile-data .info h1{
